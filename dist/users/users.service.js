@@ -33,15 +33,17 @@ let UsersService = class UsersService {
     }
     async update(id, attrs) {
         const user = await this.findOne(id);
-        if (!user)
-            throw new Error('User not found');
+        if (!user) {
+            throw new common_1.NotFoundException('user not found');
+        }
         Object.assign(user, attrs);
         return this.repo.save(user);
     }
     async remove(id) {
         const user = await this.findOne(id);
-        if (!user)
-            throw new Error('User not found');
+        if (!user) {
+            throw new common_1.NotFoundException('user not found');
+        }
         return this.repo.remove(user);
     }
 };

@@ -13,13 +13,13 @@ exports.User = void 0;
 const typeorm_1 = require("typeorm");
 let User = class User {
     logInsert() {
-        console.log('Inserted User with Id', this.id);
+        console.log('Inserted User with id', this.id);
     }
     logUpdate() {
-        console.log('Update user with id', this.id);
+        console.log('Updated User with id', this.id);
     }
     logRemove() {
-        console.log('Remove update with id', this.id);
+        console.log('Removed User with id', this.id);
     }
 };
 exports.User = User;

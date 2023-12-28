@@ -1,4 +1,3 @@
-import { Exclude } from 'class-transformer';
 import {
   AfterInsert,
   AfterRemove,
@@ -17,21 +16,20 @@ export class User {
   email: string;
 
   @Column()
-  // @Exclude()
   password: string;
 
   @AfterInsert()
   logInsert() {
-    console.log('Inserted User with Id', this.id);
+    console.log('Inserted User with id', this.id);
   }
 
   @AfterUpdate()
   logUpdate() {
-    console.log('Update user with id', this.id);
+    console.log('Updated User with id', this.id);
   }
 
   @AfterRemove()
   logRemove() {
-    console.log('Remove update with id', this.id);
+    console.log('Removed User with id', this.id);
   }
 }
